@@ -4,4 +4,4 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/github-prax
 ```
 
 # Create ssh-config file
-[~/.ssh/](./config)
+[Create config in ~/.ssh/config](./config)
