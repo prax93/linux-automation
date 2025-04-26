@@ -7,23 +7,22 @@ export DEBIAN_FRONTEND=noninteractive
 ntfyUrl=ntfy.home.local/server
 
 # Update returns 0 if packages are out of date
-updater=$(apt update)
+apt update
+updateExitCode=$?
 
-
-if [ "$updater" -eq 0 ];
-then
+if [ $updateExitCode -eq 0 ]; then
 	postContent=$(apt list | tail -n +2 | cut -d/ -f1)
 	apt upgrade -y && 
-	curl -X POST -d "$(hostname): Successfully Updated 😀 \n\n $postContent" $ntfyUrl ||
-	curl -X POST -d "$(hostname): Update Failed :(" $ntfyUrl
+	curl -X POST -d "$(hostname): Successfully Updated 😀" $ntfyUrl || curl -X POST -d "$(hostname): Update Failed :(" $ntfyUrl
+	logger "Successfully finished apt update & apt upgrade"
 fi
 
 logger "Checking for Restart"
 
 restartRequired=/var/run/reboot-required
 
-if [ -e "$restartRequired" ]; 
-then
-    content=$(cat "$restartRequired")
-    curl -X POST -d "$(hostname): $content" $ntfyUrl
+if [ -e "$restartRequired" ]; then
+	content=$(cat "$restartRequired")
+	curl -X POST -d "$(hostname): $content" $ntfyUrl
+	logger "Reboot required"
 fi
