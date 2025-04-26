@@ -14,8 +14,7 @@ if [ "$updater" -eq 0 ];
 then
 	postContent=$(apt list | tail -n +2 | cut -d/ -f1)
 	apt upgrade -y && 
-	curl -X POST -d "$(hostname): Successfully Updated 😀
-	$postContent " $ntfyUrl ||
+	curl -X POST -d "$(hostname): Successfully Updated 😀 \n\n $postContent" $ntfyUrl ||
 	curl -X POST -d "$(hostname): Update Failed :(" $ntfyUrl
 fi
 
