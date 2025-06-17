@@ -1,5 +1,0 @@
-Host github.com
-        User prax93
-        Hostname github.com
-        PreferredAuthentications publickey
-        IdentityFile /home/ubuntu/.ssh/github-prax
