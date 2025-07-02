@@ -8,8 +8,8 @@ Rsync is a tool to effectively Copy source Files to a destination. It is not int
 rsync -rvc --dry-run --delete src dest
 rsync -rvcz ~ ubuntu@host:~
 ```  
-|---|---|
 |Argument|Description|
+|---|---|
 |-r| Recursive |
 |-v| Verbose |
 |-c| Checksum |
