@@ -4,6 +4,7 @@ STARTDATE=$(date +"%d-%m-%y")
 ENDDATE=$(date -v +7d "+%d-%m-%y")
 
 HEADER="
+
 ## $STARTDATE - $ENDDATE"
 TEMPLATE="| **Exercise**              | **Set 1** | **Set 2** | **Set 3** | **Set 4** | **SET 5** | **Set6** | **Set 7** | **Set 8** | **Set 9** | **Set 10** | **Rest Period** |
 | ------------------------- | ----------| --------- | --------- | --------- | --------- | -------- | --------- | --------- | --------- | ---------- | --------------- |
@@ -22,6 +23,7 @@ TEMPLATE="| **Exercise**              | **Set 1** | **Set 2** | **Set 3** | **Se
 | **Planks**                |           |           |           |           |           |          |           |           |           |            |                 |
 | **Arnold Dips**           |           |           |           |           |           |          |           |           |           |            |                 |
 | **Planche holds**         |           |           |           |           |           |          |           |           |           |            |                 |
+
 "
 
 OUTPUTFILE="$HOME/workoutlog.md"
