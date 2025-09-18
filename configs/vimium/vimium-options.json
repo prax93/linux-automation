@@ -1,0 +1,5 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmapAll\nmap k scrollPageUp\nmap j scrollPageDown\nmap l nextTab\nmap h previousTab\nmap f enterFindMode\nmap n performFind\nmap b performBackwardsFind\nmap i focusInput\nmap § goForward\nmap m toggleMuteTab\nmap t createTab\nmap 0 goNext\nmap 9 goPrevious\nmap q removeTab",
+  "scrollStepSize": 100,
+  "settingsVersion": "2.3"
+}
