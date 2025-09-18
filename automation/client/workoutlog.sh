@@ -21,7 +21,9 @@ TEMPLATE="| **Exercise**              | **Set 1** | **Set 2** | **Set 3** | **Se
 | **Curls**                 |           |           |           |           |           |          |           |           |           |            |                 |
 | **Planks**                |           |           |           |           |           |          |           |           |           |            |                 |
 | **Arnold Dips**           |           |           |           |           |           |          |           |           |           |            |                 |
-| **Planche holds**         |           |           |           |           |           |          |           |           |           |            |                 |"
+| **Planche holds**         |           |           |           |           |           |          |           |           |           |            |                 |
+
+"
 
 OUTPUTFILE="$HOME/workoutlog.md"
 
