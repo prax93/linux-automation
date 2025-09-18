@@ -1,6 +1,5 @@
 echo Starting Docker Retriever Script
 mkdir $HOME/docker-retriever
-cd $HOME/docker-retriever
 
 count="$(docker ps -q | wc -l )"
 
@@ -10,8 +9,8 @@ if [[ $count -eq 0 ]]; then
 else 
 for container in $(docker ps --format '{{.Names}}');
 do 
-    mkdir "$container"
-    cd "$container"
+    mkdir "$HOME/docker-retriever/$container"
+    cd "$HOME/docker-retriever/$container"
     echo "gathering $container binds"
     docker inspect $container --format  '{{json .HostConfig.Binds}}' | jq > "$container"_binds.json
     echo "gathering $container mounts"

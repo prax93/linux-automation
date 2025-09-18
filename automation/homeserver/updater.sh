@@ -4,7 +4,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # Set variable for notification server
-ntfyUrl=ntfy.home.local/server
+ntfyUrl=http://ntfy.home.local/server
 
 # Update returns 0 if packages are out of date
 apt update
