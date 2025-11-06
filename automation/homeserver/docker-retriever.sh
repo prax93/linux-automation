@@ -13,6 +13,8 @@ do
     cd "$HOME/docker-retriever/$container"
     echo "gathering $container binds"
     docker inspect $container --format  '{{json .HostConfig.Binds}}' | jq > "$container"_binds.json
+    echo "gathering $container envs"
+    docker inspect jellyseerr --format '{{json .Config.Env}}' | jq > "$container"_envs.json
     echo "gathering $container mounts"
     docker inspect $container --format  '{{json .Mounts}}' | jq > "$container"_mounts.json
     echo "gathering $container ports"
