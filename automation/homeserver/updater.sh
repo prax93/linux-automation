@@ -11,10 +11,11 @@ apt update
 updateExitCode=$?
 
 if [ $updateExitCode -eq 0 ]; then
-	postContent=$(apt list | tail -n +2 | cut -d/ -f1)
-	apt upgrade -y && 
-	curl -X POST -d "$(hostname): Successfully Updated 😀" $ntfyUrl || curl -X POST -d "$(hostname): Update Failed :(" $ntfyUrl
-	logger "Successfully finished apt update & apt upgrade"
+	packagesLineCount=$(apt list --upgradable | wc -l)	
+
+	if [ $packagesLineCount -gt 1 ]; then
+	curl -X POST -d "$(hostname)\n $(apt list --upgradable)" $ntfyUrl 
+	fi
 fi
 
 logger "Checking for Restart"
