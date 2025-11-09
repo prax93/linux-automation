@@ -14,7 +14,8 @@ if [ $updateExitCode -eq 0 ]; then
 	packagesLineCount=$(apt list --upgradable | wc -l)	
 
 	if [ $packagesLineCount -gt 1 ]; then
-	curl -X POST -d "$(hostname)\n $(apt list --upgradable | awk '{{ print $1 " " $2 }}')" $ntfyUrl 
+	curl -X POST -d "$(hostname)
+$(apt list --upgradable | awk '{{ print $1 " " $2 }}')" $ntfyUrl 
 	fi
 fi
 
