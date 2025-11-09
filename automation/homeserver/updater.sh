@@ -15,7 +15,7 @@ if [ $updateExitCode -eq 0 ]; then
 
 	if [ $packagesLineCount -gt 1 ]; then
 	curl -X POST -d "$(hostname) Updates available:
-$(apt list --upgradable | awk 'NR>1{{ print $1 $2 }}')" $ntfyUrl 
+$(apt list --upgradable | awk 'NR>1{{ print $1 }}' | cut -d '/' --fields=1)" $ntfyUrl
 	fi
 fi
 
